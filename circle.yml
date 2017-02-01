@@ -1,0 +1,9 @@
+dependencies:
+  override:
+    - sudo apt-get install -fy asciidoc cdbs debootstrap devscripts make pbuilder python-setuptools python-sphinx
+    - make local_deb
+    - cp deb-build/*/ansible_*.deb $CIRCLE_ARTIFACTS/
+
+test:
+  override:
+    - /bin/true
